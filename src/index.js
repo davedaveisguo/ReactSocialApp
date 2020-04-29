@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './app/layout/App';
 import * as serviceWorker from './serviceWorker';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 // ReactDOM.render(
 //   <React.StrictMode>
@@ -13,8 +14,13 @@ import * as serviceWorker from './serviceWorker';
 
 const rootEl=document.getElementById('root');
 
+//  all the route must be nested in a BrowserRouter
 let render=()=>{
-  ReactDOM.render(<App />, rootEl)
+  ReactDOM.render(
+  <Router >
+  <App />
+  </Router>
+  , rootEl)
 }
 
 if(module.hot){
